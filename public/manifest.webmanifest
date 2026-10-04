@@ -1,0 +1,12 @@
+{
+  "name": "QuimiAnalítica",
+  "short_name": "QuimiAnalítica",
+  "description": "Química Analítica do básico ao avançado",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f8f6",
+  "theme_color": "#0e7c86",
+  "lang": "pt-BR",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

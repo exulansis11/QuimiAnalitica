@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-l0: var(--l0);
+  --color-l1: var(--l1);
+  --color-l2: var(--l2);
+  --color-l3: var(--l3);
+  --color-l4: var(--l4);
+  --color-l5: var(--l5);
+}
+
+:root {
+  --bg: #f6f7f5;
+  --surface: #ffffff;
+  --surface-2: #eef1ee;
+  --line: #dde2dd;
+  --ink: #17201d;
+  --muted: #5d6a65;
+  --brand: #0e7c86;
+  --brand-soft: #dff1f1;
+  --ok: #1f8a4c;
+  --ok-soft: #e1f3e8;
+  --bad: #c2362f;
+  --bad-soft: #fbe5e3;
+  --warn: #b26a00;
+  --warn-soft: #fbefd9;
+  /* cores dos níveis (validadas para contraste em claro/escuro) */
+  --l0: #6b7a8f;
+  --l1: #2f7fd6;
+  --l2: #7a4fd0;
+  --l3: #0e8a7e;
+  --l4: #d07a12;
+  --l5: #c8435f;
+  --chart-grid: #e6eae6;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0f1413;
+  --surface: #161d1b;
+  --surface-2: #1d2624;
+  --line: #2a3532;
+  --ink: #e7eeeb;
+  --muted: #94a39e;
+  --brand: #3cc0c8;
+  --brand-soft: #123537;
+  --ok: #4cc27f;
+  --ok-soft: #13301f;
+  --bad: #f07368;
+  --bad-soft: #3a1714;
+  --warn: #f0ad4a;
+  --warn-soft: #382711;
+  --l0: #9aa8bb;
+  --l1: #67a6f0;
+  --l2: #a888ec;
+  --l3: #3fc2b3;
+  --l4: #f0a043;
+  --l5: #ee7b93;
+  --chart-grid: #26302d;
+  color-scheme: dark;
+}
+
+html, body { background: var(--bg); color: var(--ink); }
+body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+#root { min-height: 100dvh; }
+
+.num { font-variant-numeric: tabular-nums; }
+.katex { font-size: 1.05em; }
+.katex-display { margin: 0.6em 0; overflow-x: auto; overflow-y: hidden; padding: 2px 0; }
+
+/* Conteúdo teórico */
+.prose-q p { margin: 0.5em 0; line-height: 1.65; }
+.prose-q ul { list-style: disc; padding-left: 1.3em; margin: 0.4em 0; }
+.prose-q ol { list-style: decimal; padding-left: 1.3em; margin: 0.4em 0; }
+.prose-q li { margin: 0.2em 0; line-height: 1.6; }
+.prose-q strong { font-weight: 650; }
+.prose-q h4 { font-weight: 650; margin-top: 1em; }
+.prose-q table { border-collapse: collapse; margin: 0.6em 0; font-size: 0.9em; }
+.prose-q td, .prose-q th { border: 1px solid var(--line); padding: 4px 8px; text-align: left; }
+.prose-q th { background: var(--surface-2); }
+
+input[type="range"] { accent-color: var(--brand); }
+
+/* foco visível acessível */
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 6px; }
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+  .print-break { break-before: page; }
+}
+
+/* scroll suave nas listas laterais */
+.thin-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+.thin-scroll::-webkit-scrollbar-thumb { background: var(--line); border-radius: 8px; }
